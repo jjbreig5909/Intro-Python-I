@@ -1,6 +1,6 @@
 num = int(input("Please enter a number: "))
 
-if num > 1:
+if num > 1 and (num%2)==0:
 
    for i in range(2,num):
        if (num % i) == 0:
