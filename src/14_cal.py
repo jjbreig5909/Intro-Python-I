@@ -30,4 +30,26 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
-
+print(datetime.now())
+date = input("Enter a date: ").split(' ') or datetime.now()
+if not date:
+   date = "09 2020"
+if len(date) > 2:
+  print("Sorry, enter only 2 values. ie. 05 2020")
+elif len(date) == 2:
+  month=date[0]
+  year=date[1]
+  cal = calendar.TextCalendar(calendar.SUNDAY)
+  usercal = cal.formatmonth(int(year), int(month))
+  print(usercal)
+elif len(date) == 1 and date != '':
+  month = date[0]
+  year = str(datetime.now())
+  cal = calendar.TextCalendar(calendar.SUNDAY)
+  usercal = cal.formatmonth(int(year[0:4]), int(month))
+  print(usercal)
+else:
+  month = str(datetime.now())
+  year = str(datetime.now())
+  cal = calendar.TextCalendar(calendar.SUNDAY)
+  usercal = cal.formatmonth(int(year[0:4]), int(month[7:9]))
