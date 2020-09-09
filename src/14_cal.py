@@ -42,7 +42,8 @@ elif len(date) == 2:
   cal = calendar.TextCalendar(calendar.SUNDAY)
   usercal = cal.formatmonth(int(year), int(month))
   print(usercal)
-elif len(date) == 1 and date != '':
+elif len(date) == 1 and date != ['']:
+  print(date)
   month = date[0]
   year = str(datetime.now())
   cal = calendar.TextCalendar(calendar.SUNDAY)
@@ -52,4 +53,5 @@ else:
   month = str(datetime.now())
   year = str(datetime.now())
   cal = calendar.TextCalendar(calendar.SUNDAY)
-  usercal = cal.formatmonth(int(year[0:4]), int(month[7:9]))
+  usercal = cal.formatmonth(int(year[0:4]), int(month[5:7]))
+  print (usercal)
